@@ -7,6 +7,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 
 const extractBootstrap = new ExtractTextPlugin('bootstrap.[contenthash].css');
+
+const extractCustomCss = new ExtractTextPlugin('portal.[contenthash].css');
+
 const extractMain = new ExtractTextPlugin('main.[contenthash].css');
 const extractControls = new ExtractTextPlugin('controls.[contenthash].css');
 const extractSASS = new ExtractTextPlugin('sideMenu.[contenthash].css');
@@ -38,6 +41,13 @@ module.exports = {
             exclude: EXCLUDE_FOLDERS
         },
         {
+            test: /(main|controls|common)\.css$/,
+            use: extractCustomCss.extract({
+                fallback: "style-loader",
+                use: "css-loader"
+            })
+        },/*
+        {
             test: /main\.css$/,
             use: extractMain.extract({
                 fallback: "style-loader",
@@ -50,7 +60,7 @@ module.exports = {
                   fallback: "style-loader",
                   use: "css-loader"
               })
-            },
+            },*/
             {
                 test: /bootstrap\.min\.css$/,
                 use: extractBootstrap.extract({
@@ -78,6 +88,7 @@ module.exports = {
         }),
         /* order of the plugins determie the order of the render in the HTML file! */
         extractBootstrap,
+        extractCustomCss,
         extractMain,
         extractControls,
         extractSASS,

@@ -4,10 +4,10 @@ import ToolBar from './components/toolbar';
 
 //import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/common.css';
 import './styles/main.css';
 import './styles/controls.css';
 import './styles/sideMenu.scss';
-
 
 const App = ({name}) => (
   <div>
@@ -19,6 +19,6 @@ const App = ({name}) => (
  );
 
 ReactDOM.render(
-  <App name='shimi!' />,
+  <App name='Hello world!' />,
   document.getElementById('root')
 );

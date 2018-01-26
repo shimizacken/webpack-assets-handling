@@ -13,3 +13,21 @@ plugins: [
     extractControls,
     extractSASS
 ]
+
+For extracting multiple specific files of the same type use loader:
+
+```bash
+{
+    test: /(main|controls|common)\.css$/,
+    use: extractCustomCss.extract({
+        fallback: "style-loader",
+        use: "css-loader"
+    })
+}
+
+And add the plugin:
+
+```bash
+plugins: [
+    extractCustomCss
+]
