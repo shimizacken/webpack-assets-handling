@@ -19,26 +19,25 @@ plugins: [
 
 For extracting multiple specific files of the same type use loader:
 
-
-
 ```js
 const extractCustomCss = new ExtractTextPlugin('portal.[contenthash].css');
 ```
 
 ```js
-{
-    test: /(main|controls|common)\.css$/,
-    use: extractCustomCss.extract({
-        fallback: "style-loader",
-        use: "css-loader"
-    })
-}
-```
-
-And add the plugin:
-
-```js
-plugins: [
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /(main|controls|common)\.css$/,
+        use: extractCustomCss.extract({
+            fallback: "style-loader",
+            use: "css-loader"
+        })
+      }
+    ]
+  },
+  plugins: [
     extractCustomCss
-]
+  ]
+}
 ```
