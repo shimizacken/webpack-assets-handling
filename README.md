@@ -6,7 +6,7 @@ An _hello world_ simple project that explores the [webpack](https://github.com/w
 
 The order of the [ExtractTextPlugin](https://github.com/webpack-contrib/extract-text-webpack-plugin) plugins, will be the order of the _css_ files in the HTML file:
 
-```bash
+```js
 plugins: [
     extractBootstrap,
     extractMain,
@@ -17,7 +17,7 @@ plugins: [
 
 For extracting multiple specific files of the same type use loader:
 
-```bash
+```js
 {
     test: /(main|controls|common)\.css$/,
     use: extractCustomCss.extract({
@@ -29,7 +29,7 @@ For extracting multiple specific files of the same type use loader:
 
 And add the plugin:
 
-```bash
+```js
 plugins: [
     extractCustomCss
 ]
