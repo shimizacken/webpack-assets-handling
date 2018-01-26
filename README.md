@@ -1,1 +1,1 @@
-# webpack-handling-styles
+# webpack-template
