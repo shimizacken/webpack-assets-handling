@@ -1,11 +1,14 @@
-html, body {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
+#root {
+    background-color: #eeeeee;
+    height: inherit;
 }
 
-#root {
-    background-color: #d8d8d8;
-    height: 100%;
+#root .main-wrapper {
+
+    height: inherit;
+}
+
+#root .main-wrapper .main-content {
+
+    margin-top: 25px;
 }

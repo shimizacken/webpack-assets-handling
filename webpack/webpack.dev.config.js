@@ -62,7 +62,7 @@ module.exports = {
               })
             },*/
             {
-                test: /bootstrap\.min\.css$/,
+                test: /bootstrap\.css$/,
                 use: extractBootstrap.extract({
                     fallback: "style-loader",
                     use: "css-loader"

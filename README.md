@@ -2,7 +2,7 @@
     <h1>webpack-handling-styles</h1>
 </div>
 
-An _hello world_ simple project that explores the [webpack](https://github.com/webpack/webpack) styles loading and processing  
+An _hello world_ project that explores [webpack](https://github.com/webpack/webpack) styles loading and processing  
 
 <h2 align="center">Conclusions</h2>
 
