@@ -13,6 +13,7 @@ plugins: [
     extractControls,
     extractSASS
 ]
+```
 
 For extracting multiple specific files of the same type use loader:
 
@@ -24,6 +25,7 @@ For extracting multiple specific files of the same type use loader:
         use: "css-loader"
     })
 }
+```
 
 And add the plugin:
 
@@ -31,3 +33,4 @@ And add the plugin:
 plugins: [
     extractCustomCss
 ]
+```
