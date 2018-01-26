@@ -4,6 +4,8 @@
 
 An _hello world_ simple project that explores the [webpack](https://github.com/webpack/webpack) styles loading and processing  
 
+<h2 align="center">Conclusions</h2>
+
 The order of the [ExtractTextPlugin](https://github.com/webpack-contrib/extract-text-webpack-plugin) plugins, will be the order of the `*.css` files in the HTML file:
 
 ```js
@@ -16,6 +18,12 @@ plugins: [
 ```
 
 For extracting multiple specific files of the same type use loader:
+
+
+
+```js
+const extractCustomCss = new ExtractTextPlugin('portal.[contenthash].css');
+```
 
 ```js
 {
