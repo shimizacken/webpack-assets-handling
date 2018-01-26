@@ -3,7 +3,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 
 const extractBootstrap = new ExtractTextPlugin('bootstrap.[contenthash].css');
@@ -95,14 +94,6 @@ module.exports = {
         inline: true,
         noInfo: true,
         historyApiFallback: true,
-        port: PORT,
-        // proxy: {
-        //     '/cxwebclient/api': {
-        //         target: TARGET_PORTAL_URL
-        //     },
-        //     '/cxrestapi': {
-        //         target: TARGET_REST_API_URL
-        //     }
-        // }
+        port: PORT
     }
 };
