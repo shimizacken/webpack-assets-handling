@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './styles/common.css';
 import './styles/main.css';
 import './styles/controls.css';
-import './styles/sideMenu.scss';
+import './styles/top-menu.scss';
 
 const App = ({title}) => (
   <div className='main-wrapper'>

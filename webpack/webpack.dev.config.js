@@ -12,7 +12,7 @@ const extractCustomCss = new ExtractTextPlugin('portal.[contenthash].css');
 
 const extractMain = new ExtractTextPlugin('main.[contenthash].css');
 const extractControls = new ExtractTextPlugin('controls.[contenthash].css');
-const extractSASS = new ExtractTextPlugin('sideMenu.[contenthash].css');
+const extractSASS = new ExtractTextPlugin('top-menu.[contenthash].css');
 
 const EXCLUDE_FOLDERS = /node_modules/;
 const PORT = 8282;
@@ -67,13 +67,12 @@ module.exports = {
                     fallback: "style-loader",
                     use: "css-loader"
                 })
-            }
-            ,
+            },
             {
-                test: /sideMenu\.scss$/,
+                test: /\.scss$/,
                 use: extractSASS.extract({
-                    fallback: "style-loader",
-                    use: "css-loader"
+                    fallback: ["style-loader"], // translates CSS into CommonJS
+                    use: ["css-loader", "sass-loader"] // compiles Sass to CSS
                 })
             }
         ]
