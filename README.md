@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>webpack-handling-styles</h1>
+    <h1>webpack-assets-handling</h1>
 </div>
 
 An _hello world_ project that explores [webpack](https://github.com/webpack/webpack) styles loading and processing  
