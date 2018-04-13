@@ -1,7 +1,8 @@
 {
   "name": "webpack-handling-styles",
   "version": "1.0.0",
-  "description": "",
+  "description": "Webpack styles hadling test project",
+  "private": true,
   "main": "app.js",
   "scripts": {
     "start": "npm-run-all webpack-dev-derver",
@@ -16,7 +17,7 @@
     "url": "git+https://github.com/shimizacken/webpack-handling-styles.git"
   },
   "author": "Shimi Zacken",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/shimizacken/webpack-handling-styles/issues"
   },
