@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ToolBar from './components/toolbar';
+import Content from './components/content';
 
 import 'bootstrap/dist/css/bootstrap.css';
 //import 'bootstrap/dist/css/bootstrap.min.css';
@@ -16,6 +17,7 @@ const App = ({title}) => (
       <h1>
         {`${title}`}
       </h1>
+      <Content />
     </div>
   </div>
  );
