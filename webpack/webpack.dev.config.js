@@ -98,7 +98,7 @@ module.exports = {
         }),
         new WebpackCleanupPlugin()
     ],
-    devtool: 'cheap-source-map',
+    devtool: 'source-map',
     devServer: {
         contentBase: './',
         hot: true,
