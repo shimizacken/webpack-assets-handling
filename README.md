@@ -1,9 +1,10 @@
 <div align="center">
-    <h1>webpack-assets-handling</h1>
+    :boom:<h1>webpack-assets-handling</h1>:boom:
 </div>
 
-An _hello world_ project that explores [webpack](https://github.com/webpack/webpack) styles loading and processing  
+An _hello world_ project that explores [webpack](https://github.com/webpack/webpack) assets such `css`, `svg`, `png`, and `fonts` and how to load and proccess it via webpack
 
+# CSS
 <h2 align="center">Conclusions</h2>
 
 The order of the [ExtractTextPlugin](https://github.com/webpack-contrib/extract-text-webpack-plugin) plugins, will be the order of the `*.css` files in the HTML file:
