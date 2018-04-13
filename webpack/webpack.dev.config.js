@@ -1,4 +1,4 @@
-"use strict"
+'use strict'
 
 const path = require('path');
 const webpack = require('webpack');
@@ -12,7 +12,7 @@ const extractCustomCss = new ExtractTextPlugin('portal.[contenthash].css');
 
 const extractMain = new ExtractTextPlugin('main.[contenthash].css');
 const extractControls = new ExtractTextPlugin('controls.[contenthash].css');
-const extractSASS = new ExtractTextPlugin('top-menu.[contenthash].css');
+const extractSASS = new ExtractTextPlugin('features.[contenthash].css');
 
 const EXCLUDE_FOLDERS = /node_modules/;
 const PORT = 8282;
@@ -23,7 +23,7 @@ module.exports = {
             'webpack-dev-server/client?http://localhost:' + PORT + '/',
             './src/app.js'
         ],
-        vendor: ["react", "react-dom"]
+        vendor: ['react', 'react-dom']
     },
     output: {
         publicPath: '/',
@@ -43,36 +43,48 @@ module.exports = {
         {
             test: /(main|controls|common)\.css$/,
             use: extractCustomCss.extract({
-                fallback: "style-loader",
-                use: "css-loader"
+                fallback: 'style-loader',
+                use: 'css-loader'
             })
         },/*
         {
             test: /main\.css$/,
             use: extractMain.extract({
-                fallback: "style-loader",
-                use: "css-loader"
+                fallback: 'style-loader',
+                use: 'css-loader'
             })
           },
           {
               test: /controls\.css$/,
               use: extractControls.extract({
-                  fallback: "style-loader",
-                  use: "css-loader"
+                  fallback: 'style-loader',
+                  use: 'css-loader'
               })
             },*/
             {
                 test: /bootstrap\.css$/,
                 use: extractBootstrap.extract({
-                    fallback: "style-loader",
-                    use: "css-loader"
+                    fallback: 'style-loader',
+                    use: 'css-loader?modules'
                 })
             },
             {
                 test: /\.scss$/,
                 use: extractSASS.extract({
-                    fallback: ["style-loader"], // translates CSS into CommonJS
-                    use: ["css-loader", "sass-loader"] // compiles Sass to CSS
+                    fallback: ['style-loader'], // translates CSS into CommonJS
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                modules: true,
+                                localIdentName: '[local]--[hash:base64:5]',
+                                sourceMap: true,
+                                minimize: true,
+                                camelCase: true
+                            }
+                        },
+                        'sass-loader'
+                    ] // compiles sass to CSS
                 })
             }
         ]
@@ -92,8 +104,8 @@ module.exports = {
         extractControls,
         extractSASS,
         new webpack.optimize.CommonsChunkPlugin({
-            name: "vendor",
-            filename: "vendor.bundle.js",
+            name: 'vendor',
+            filename: 'vendor.bundle.js',
             minChunks: Infinity
         }),
         new WebpackCleanupPlugin()
