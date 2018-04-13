@@ -1,5 +1,5 @@
 <div align="center">
-    :boom:<h1>webpack-assets-handling</h1>:boom:
+    # :boom: webpack-assets-handling :boom:
 </div>
 
 An _hello world_ project that explores [webpack](https://github.com/webpack/webpack) assets such `css`, `svg`, `png`, and `fonts` and how to load and proccess it via webpack
